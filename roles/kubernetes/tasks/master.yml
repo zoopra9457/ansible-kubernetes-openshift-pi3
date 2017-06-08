@@ -21,6 +21,7 @@
 
 - name: Rename cluster configuration
   local_action: command mv {{ playbook_dir }}/run/admin.conf {{ playbook_dir }}/run/pi-cluster.cfg
+  become: false
 
 - name: Install CNI plugin for {{ overlay_network }}
   include: cni/{{ overlay_network }}.yml
