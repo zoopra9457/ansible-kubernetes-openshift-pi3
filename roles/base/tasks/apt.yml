@@ -21,7 +21,7 @@
   # Try to pick up 1.6 builds. Switch over to '-unstable' if targeting latest releases
   apt_repository: repo='deb http://apt.kubernetes.io/ kubernetes-xenial main' state=present
 
-- name: Pin Docker to a version {{ version.docker_version }} (the latest supported by Kubernetes)
+- name: Pin Docker to a version {{ version.docker_engine }} (the latest supported by Kubernetes)
   template: src=docker-apt-pin.txt dest=/etc/apt/preferences.d/docker
 
 - name: Update APT package cache and upgrade
